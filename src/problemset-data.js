@@ -24,7 +24,9 @@
       (data?.activeDailyCodingChallengeQuestion?.question ? [data.activeDailyCodingChallengeQuestion.question] : []);
     if (!Array.isArray(questions)) return;
     const rows = questions.slice(0, 1000).filter(q => typeof q?.titleSlug === 'string').map(q => ({
-      slug: q.titleSlug, status: q.status,
+      // Daily/discovery responses may omit user status. Preserve known status
+      // in that case; explicit null still clears a previous solved result.
+      slug: q.titleSlug, status: Object.prototype.hasOwnProperty.call(q, 'status') ? q.status : cache.get(q.titleSlug)?.status,
       tags: (Array.isArray(q.topicTags) ? q.topicTags : []).slice(0, 15).filter(t => t && typeof t === 'object').map(t => ({ name: t.nameTranslated || t.name, slug: t.slug }))
     }));
     // fetch polyfills can also trigger the XHR tap. Publish a change only once.

@@ -28,8 +28,8 @@
       owner = heading.parentElement; mark(owner, 'data-lcfl-directory');
       if (!hero?.isConnected) {
         hero = document.createElement('section'); hero.className = 'lcfl-directory-head';
-        hero.setAttribute('aria-label', 'Fastlap problem directory');
-        hero.innerHTML = `<div class="lcfl-directory-title"><p><i></i> FASTLAP / PROBLEM DIRECTORY</p><h2>PROBLEM<span>GRID</span></h2><div class="lcfl-directory-legend"><span>● SOLVED</span><span>◐ ATTEMPTED</span><span>YOUR NEXT LAP AWAITS</span></div></div>
+        hero.setAttribute('aria-label', 'Problem directory');
+        hero.innerHTML = `<div class="lcfl-directory-title"><p><i></i> PROBLEM DIRECTORY</p><h2>PROBLEM<span>GRID</span></h2><div class="lcfl-directory-legend"><span>● SOLVED</span><span>◐ ATTEMPTED</span><span>YOUR NEXT LAP AWAITS</span></div></div>
           <a class="lcfl-feature" hidden><span>DAILY CHALLENGE / DISCOVERY</span><strong></strong><small></small><b>TAKE THE START →</b></a>`;
         heading.after(hero);
       }
@@ -105,8 +105,10 @@
            node.querySelector(`${ROW}, input, h1, [data-e2e-locator="filter-button"]`)));
       })) schedule();
     });
-    // Only native main, when available; no attributes or whole-document observer.
-    observer.observe(observed, { childList: true, subtree: true, characterData: true });
+    // Watch only native row identity attributes as well as content, so React
+    // can recycle a row without leaving the previous problem's solved marker.
+    observer.observe(observed, { childList: true, subtree: true, characterData: true,
+      attributes: true, attributeFilter: ['data-e2e-slug'] });
     enhance(); dispatchEvent(new CustomEvent('lc-fastlap-request-problem-data'));
     return { app, schedule, get connected() { return observed.isConnected && (!hero || hero.isConnected); }, cleanup() {
       disposed = true; clearTimeout(timer); observer.disconnect(); hero?.remove();

@@ -139,6 +139,13 @@ html[data-lc-theme="fastlap"] [data-lcfl-title] {
   white-space:normal !important; display:block !important; overflow:visible !important;
   overflow-wrap:anywhere; text-overflow:clip;
 }
+/* Completion is independent of the difficulty edge. Keep React's numbered
+   title intact; only confirmed solved metadata adds an inline check. */
+html[data-lc-theme="fastlap"] [data-lcfl-tower] [data-lcfl-status="solved"] [data-lcfl-title]::before {
+  content:"✓"; display:inline-block; margin-right:5px;
+  color:#65A88A; font:700 12px/1 "FL Titillium",sans-serif;
+  vertical-align:baseline; pointer-events:none;
+}
 html[data-lc-theme="fastlap"] [data-lcfl-row-info] {
   display:grid !important; grid-template-columns:minmax(0,1fr) 68px 76px;
   grid-auto-flow:column; grid-auto-columns:max-content;
@@ -184,13 +191,27 @@ html[data-lc-theme="fastlap"] [data-lcfl-tower] [data-e2e-locator="question-list
   html[data-lc-theme="fastlap"] [data-lcfl-results] { display:block !important; }
   html[data-lc-theme="fastlap"] [data-lcfl-controls] > div:last-child { width:100%; justify-content:space-between; }
   html[data-lc-theme="fastlap"] [data-lcfl-tower] [data-e2e-locator="question-list-row"] { padding:14px 12px !important; }
-  html[data-lc-theme="fastlap"] [data-lcfl-row-info] { grid-template-columns:minmax(0,1fr) 60px 68px; gap:10px; }
+  /* Completion is independent of the difficulty edge. Keep React's numbered
+   title intact; only confirmed solved metadata adds an inline check. */
+html[data-lc-theme="fastlap"] [data-lcfl-tower] [data-lcfl-status="solved"] [data-lcfl-title]::before {
+  content:"✓"; display:inline-block; margin-right:5px;
+  color:#65A88A; font:700 12px/1 "FL Titillium",sans-serif;
+  vertical-align:baseline; pointer-events:none;
+}
+html[data-lc-theme="fastlap"] [data-lcfl-row-info] { grid-template-columns:minmax(0,1fr) 60px 68px; gap:10px; }
   html[data-lc-theme="fastlap"] [data-lcfl-difficulty] { width:68px !important; min-width:68px; }
   html[data-lc-theme="fastlap"] [data-lcfl-title] { font-size:15px !important; }
 
 }
 @media (max-width:480px) {
-  html[data-lc-theme="fastlap"] [data-lcfl-row-info] { grid-template-columns:minmax(0,1fr) 68px; grid-auto-flow:row; gap:8px 12px; }
+  /* Completion is independent of the difficulty edge. Keep React's numbered
+   title intact; only confirmed solved metadata adds an inline check. */
+html[data-lc-theme="fastlap"] [data-lcfl-tower] [data-lcfl-status="solved"] [data-lcfl-title]::before {
+  content:"✓"; display:inline-block; margin-right:5px;
+  color:#65A88A; font:700 12px/1 "FL Titillium",sans-serif;
+  vertical-align:baseline; pointer-events:none;
+}
+html[data-lc-theme="fastlap"] [data-lcfl-row-info] { grid-template-columns:minmax(0,1fr) 68px; grid-auto-flow:row; gap:8px 12px; }
   html[data-lc-theme="fastlap"] [data-lcfl-row-info] > div:first-child { grid-column:1 / -1; }
   html[data-lc-theme="fastlap"] [data-lcfl-acceptance] { grid-column:1; }
   html[data-lc-theme="fastlap"] [data-lcfl-difficulty] { grid-column:2; }

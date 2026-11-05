@@ -4,8 +4,16 @@
   if (globalThis.__lcflStinger) return;
   globalThis.__lcflStinger = true;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let card = null, timeout = 0, check = 0, listeners = null, abortWatch = null;
-  let path = location.pathname, anticipated = null;
+  let card = null, timeout = 0, check = 0, listeners = null;
+  let section = majorSection(location.pathname);
+
+  // Only the first path segment defines a section; IDs, tabs, queries and
+  // hashes never participate. Problem details belong to the problem directory.
+  function majorSection(pathname) {
+    const root = pathname.split('/').filter(Boolean)[0] || 'home';
+    const aliases = { problems: 'problemset', contests: 'contest', u: 'profile' };
+    return Object.prototype.hasOwnProperty.call(aliases, root) ? aliases[root] : root;
+  }
 
   function caption(pathname) {
     if (/\/submissions(?:\/|$)/.test(pathname)) return 'SUBMISSIONS';
@@ -20,7 +28,6 @@
   function clear() {
     clearTimeout(timeout); timeout = 0;
     clearTimeout(check); check = 0;
-    abortWatch?.abort(); abortWatch = null;
     card?.remove(); card = null;
   }
   function show(destination) {
@@ -45,13 +52,14 @@
     function ready() {
       const root = document.documentElement;
       const host = document.querySelector('#__next, #root, #app, main');
-      if (location.pathname !== destination || document.readyState === 'loading' ||
+      const currentPath = location.pathname;
+      if (majorSection(currentPath) !== majorSection(destination) || document.readyState === 'loading' ||
           root.dataset.lcTheme !== 'fastlap' || !root.classList.contains('dark') ||
           !getComputedStyle(root).getPropertyValue('--fl-carbon').trim() ||
           !host?.childElementCount || document.fonts.status !== 'loaded') return false;
       // Wait for local page adapters, never for contest data or 3D downloads.
-      if (/^\/problemset(?:\/|$)/.test(destination) && !document.querySelector('.lcfl-directory-head')) return false;
-      if (/^\/u\/[^/]+/.test(destination) && !document.querySelector('#lcfl-drive')) return false;
+      if (/^\/problemset(?:\/|$)/.test(currentPath) && !document.querySelector('.lcfl-directory-head')) return false;
+      if (/^\/u\/[^/]+/.test(currentPath) && !document.querySelector('#lcfl-drive')) return false;
       return true;
     }
     function poll() {
@@ -66,56 +74,34 @@
     // Broken routes, absent adapters or failed fonts must never strand the overlay.
     timeout = setTimeout(reveal, 4500);
   }
-  function departing(url) {
-    if (url.origin !== location.origin || url.pathname === location.pathname) return;
-    anticipated = url.pathname;
-    show(url.pathname);
-  }
   function committed() {
-    const next = location.pathname;
-    if (next === path) return;
-    path = next;
-    if (anticipated !== next) show(next);
-    anticipated = null;
+    const next = majorSection(location.pathname);
+    if (next === section) return;
+    // Update synchronously before showing: all route event sources share this
+    // state, so currententrychange, popstate and React notifications deduplicate.
+    section = next;
+    show(location.pathname);
   }
   function attach() {
     if (listeners) return;
     listeners = new AbortController();
     const options = { signal: listeners.signal };
     if (globalThis.navigation) {
-      navigation.addEventListener('navigate', event => {
-        if (event.defaultPrevented || event.hashChange || event.downloadRequest != null || event.navigationType === 'reload') return;
-        let url; try { url = new URL(event.destination.url); } catch { return; }
-        departing(url);
-        const current = card;
-        if (!current) return;
-        abortWatch = new AbortController();
-        event.signal.addEventListener('abort', () => {
-          if (card === current) { clear(); anticipated = null; }
-        }, { once: true, signal: abortWatch.signal });
-      }, options);
       navigation.addEventListener('currententrychange', committed, options);
       navigation.addEventListener('navigatesuccess', committed, options);
-    } else {
-      // Older Chrome: native click + existing content.js route notification.
-      addEventListener('click', event => {
-        if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        const link = event.target.closest?.('a[href]');
-        if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
-        try { departing(new URL(link.href, location.href)); } catch { /* Invalid link. */ }
-      }, options);
     }
+    // Older Chrome uses content.js's existing route notification; do not
+    // speculate on clicks, which may be cancelled or redirected by React.
     addEventListener('popstate', committed, options);
     addEventListener('lc-fastlap-route', committed, options);
     document.addEventListener('visibilitychange', () => { if (document.hidden) clear(); }, options);
   }
   addEventListener('pagehide', () => {
-    clear(); anticipated = null; listeners?.abort(); listeners = null;
+    clear(); listeners?.abort(); listeners = null;
   });
-  addEventListener('pageshow', event => {
-    path = location.pathname; anticipated = null; attach();
-    if (event.persisted) show(path);
+  addEventListener('pageshow', () => {
+    attach(); committed();
   });
   attach();
-  show(path);
+  show(location.pathname);
 })();
