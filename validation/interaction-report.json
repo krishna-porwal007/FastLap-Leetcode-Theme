@@ -1,0 +1,105 @@
+{
+  "checks": [
+    {
+      "name": "native tags",
+      "count": 101,
+      "twoSum": "Array\nHash Table"
+    },
+    {
+      "name": "search native sign-in gate",
+      "request": "two sum",
+      "errors": [
+        {
+          "message": "🐸☕Please Register or Sign in",
+          "locations": [
+            {
+              "line": 3,
+              "column": 3
+            }
+          ],
+          "path": [
+            "problemsetQuestionListV2"
+          ],
+          "extensions": {
+            "skip_sentry": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "sort",
+      "sort": {
+        "sortField": "AC_RATE",
+        "sortOrder": "DESCENDING"
+      },
+      "first": "3263. Convert Doubly Linked List to Array I"
+    },
+    {
+      "name": "filter",
+      "filter": {
+        "difficulties": [
+          "EASY"
+        ],
+        "operator": "IS"
+      },
+      "difficulties": [
+        "EASY"
+      ]
+    },
+    {
+      "name": "incremental pagination",
+      "before": 101,
+      "after": 201,
+      "skip": 100
+    },
+    {
+      "name": "mobile",
+      "searchVisible": true,
+      "overflow": false
+    },
+    {
+      "name": "forward and reverse",
+      "poses": [
+        {
+          "distance": "202.797",
+          "progress": "0.25000",
+          "round": "ROUND 006 / 27Aug 6, 2017"
+        },
+        {
+          "distance": "453.110",
+          "progress": "0.60000",
+          "round": "ROUND 016 / 27Jan 28, 2018"
+        },
+        {
+          "distance": "202.797",
+          "progress": "0.25000",
+          "round": "ROUND 006 / 27Aug 6, 2017"
+        },
+        {
+          "distance": "732.083",
+          "progress": "0.99008",
+          "round": "ROUND 027 / 27Sep 22, 2024"
+        }
+      ]
+    },
+    {
+      "name": "skip",
+      "nativeVisible": true,
+      "scrollLocked": false
+    },
+    {
+      "name": "reduced motion",
+      "mode": "compact"
+    },
+    {
+      "name": "mobile profile",
+      "mode": "compact"
+    },
+    {
+      "name": "native navigation cleanup",
+      "driveCount": 0,
+      "sameDocument": true
+    }
+  ],
+  "errors": []
+}

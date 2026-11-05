@@ -1,0 +1,29 @@
+/* Adapted from original Fastlap fastlap-shell.css stinger panels and caption.
+   Entrance, readiness hold and reveal; no styles on native content. */
+#lcfl-stinger { position:fixed; z-index:2147483000; inset:0; overflow:hidden; pointer-events:none !important; contain:strict; user-select:none; background:#0e0e10; opacity:1; transition:opacity 220ms ease; }
+#lcfl-stinger * { box-sizing:border-box; pointer-events:none !important; }
+#lcfl-stinger > i, #lcfl-stinger > .c { position:absolute; inset-block:0; left:-260px; width:calc(100vw + 520px); will-change:transform; animation:lcfl-st-sweep 420ms cubic-bezier(.7,0,.25,1) both; }
+#lcfl-stinger > .r { background:#e10a1e; }
+#lcfl-stinger > .w { background:#f2f2f5; animation-delay:16ms; }
+#lcfl-stinger > .c { background:linear-gradient(90deg,#f2f2f5 0 6px,#e10a1e 6px 24px,#0e0e10 24px); animation-delay:32ms; }
+#lcfl-stinger > .s { position:absolute; inset-block:0; right:0; width:34vw; background:repeating-linear-gradient(115deg,#ffffff0c 0 22px,transparent 22px 64px); clip-path:polygon(14vw 0,100% 0,100% 100%,0 100%); animation:lcfl-st-stripes 480ms ease-out both; }
+#lcfl-stinger .cap { position:absolute; left:12vw; right:8vw; top:50%; display:flex; flex-direction:column; gap:18px; animation:lcfl-st-caption 480ms cubic-bezier(.16,1,.3,1) both; }
+#lcfl-stinger .k { display:flex; flex-wrap:wrap; align-items:center; gap:14px; font:700 12px var(--fl-display); letter-spacing:.24em; color:#8c8c97; }
+#lcfl-stinger .k b { padding:6px 22px 6px 12px; background:#e10a1e; color:#fff; font:italic 900 17px var(--fl-display); letter-spacing:.04em; clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%); }
+#lcfl-stinger .l { color:#fff; font:italic 900 clamp(32px,7.4vw,112px)/.95 var(--fl-display); letter-spacing:-.01em; overflow-wrap:anywhere; }
+#lcfl-stinger .t { width:min(360px,65vw); height:3px; background:#26262c; overflow:hidden; }
+#lcfl-stinger .t i { display:block; width:25%; height:100%; background:linear-gradient(90deg,transparent,#e10a1e 65%); box-shadow:0 0 6px #e10a1e66; animation:lcfl-st-accent 1.3s linear infinite; }
+#lcfl-stinger.lcfl-st-reveal { opacity:0; }
+@keyframes lcfl-st-sweep { from { transform:skewX(-14deg) translateX(calc(-100vw - 600px)); } to { transform:skewX(-14deg) translateX(0); } }
+@keyframes lcfl-st-caption { from { opacity:0; transform:translate(-24px,-50%); } to { opacity:1; transform:translate(0,-50%); } }
+@keyframes lcfl-st-stripes { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
+/* Both endpoints are outside the track, so the loop never snaps in view. */
+@keyframes lcfl-st-accent { from { transform:translateX(-110%); } to { transform:translateX(410%); } }
+@media (max-width:600px) { #lcfl-stinger .cap { left:8vw; } #lcfl-stinger .k { font-size:10px; gap:10px; letter-spacing:.16em; } }
+@media (prefers-reduced-motion:reduce) {
+  #lcfl-stinger { transition-duration:100ms; }
+  #lcfl-stinger, #lcfl-stinger * { animation:none !important; }
+  #lcfl-stinger > i, #lcfl-stinger > .c { transform:skewX(-14deg); }
+  #lcfl-stinger .cap { transform:translateY(-50%); }
+  #lcfl-stinger .t i { transform:none; box-shadow:none; }
+}

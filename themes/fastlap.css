@@ -1,0 +1,52 @@
+/* Fastlap roles for LeetCode. Carbon, pit surfaces, white ink and race-red fills. */
+@font-face { font-family: "FL Titillium"; font-style: normal; font-weight: 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/titillium-900.woff2") format("woff2"); }
+@font-face { font-family: "FL Titillium"; font-style: normal; font-weight: 700; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/titillium-700.woff2") format("woff2"); }
+@font-face { font-family: "FL Titillium"; font-style: italic; font-weight: 700 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/titillium-700i.woff2") format("woff2"); }
+@font-face { font-family: "FL Titillium"; font-style: normal; font-weight: 600; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/titillium-600.woff2") format("woff2"); }
+@font-face { font-family: "FL Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/inter-latin.woff2") format("woff2"); }
+@font-face { font-family: "FL Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/inter-cyrillic.woff2") format("woff2"); unicode-range: U+0400-052F, U+1C80-1C8F, U+20B4, U+2DE0-2DFF, U+A640-A69F; }
+@font-face { font-family: "FL JetBrains Mono"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/jbmono-latin.woff2") format("woff2"); }
+@font-face { font-family: "FL JetBrains Mono"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("chrome-extension://__MSG_@@extension_id__/fonts/jbmono-cyrillic.woff2") format("woff2"); unicode-range: U+0400-052F, U+1C80-1C8F, U+20B4, U+2DE0-2DFF, U+A640-A69F; }
+
+html[data-lc-theme="fastlap"] {
+  color-scheme: dark;
+  --fl-carbon:#0E0E10; --fl-pit:#151518; --fl-raised:#1C1C21;
+  --fl-line:#26262C; --fl-line-2:#34343C;
+  --fl-ink:#FFFFFF; --fl-ink-2:#B4B4BE; --fl-ink-3:#8C8C97;
+  --fl-red:#E10A1E; --fl-red-text:#FF8A8A;
+  --fl-green:#22C55E; --fl-yellow:#FACC15; --fl-purple:#A855F7;
+  --fl-display:"FL Titillium","Arial Narrow","Segoe UI",sans-serif;
+  --fl-text:"FL Inter","Segoe UI",system-ui,sans-serif;
+  --fl-code:"FL JetBrains Mono",Consolas,ui-monospace,monospace;
+
+  --lc-desk:var(--fl-carbon); --lc-bg0:var(--fl-carbon); --lc-bg1:var(--fl-pit);
+  --lc-bg2:var(--fl-pit); --lc-bg3:var(--fl-raised); --lc-inset:#0B0B0D;
+  --lc-raised:var(--fl-raised); --lc-editor-bg:var(--fl-carbon);
+  --lc-border:var(--fl-line); --lc-border-strong:var(--fl-line-2);
+  --lc-hairline:var(--fl-line); --lc-groove:#0B0B0D; --lc-rule:#FFFFFF;
+  --lc-fill-1:rgba(255,255,255,.14); --lc-fill-2:rgba(255,255,255,.10);
+  --lc-fill-3:rgba(255,255,255,.06); --lc-fill-4:rgba(255,255,255,.035);
+  --lc-text:var(--fl-ink); --lc-text2:var(--fl-ink-2); --lc-text3:var(--fl-ink-3);
+  --lc-accent:#FFFFFF; --lc-accent-2:#EDEDF2; --lc-accent-contrast:var(--fl-carbon);
+  --lc-green:var(--fl-green); --lc-yellow:var(--fl-yellow); --lc-red:var(--fl-red-text);
+  --lc-selection:rgba(255,255,255,.22); --lc-scroll:#34343C;
+  --lc-hsl-bg:240 7% 6%; --lc-hsl-desk:240 7% 6%; --lc-hsl-raised:240 8% 12%;
+  --lc-hsl-text:0 0% 100%; --lc-hsl-text3:240 5% 57%; --lc-hsl-accent:0 0% 100%;
+  --lc-hsla-hairline:240,7%,16%,1; --lc-hsl-accent2:240 14% 94%;
+  --lc-radius:0px; --lc-radius-sm:0px;
+  --lc-font-ui:var(--fl-text); --lc-font-prose:var(--fl-text);
+  --lc-prose-size:16px; --lc-prose-leading:1.75; --lc-prose-measure:74ch;
+  --lc-tex-body:none; --lc-tex-panel:none;
+  --lc-tex-body-size:auto; --lc-tex-panel-size:auto;
+  --lc-nav-bg:var(--fl-carbon); --lc-nav-rule:var(--fl-line); --lc-nav-shadow:none;
+  --lc-submit-bg:var(--fl-red); --lc-submit-bg-hover:#F2132A;
+  --lc-submit-text:#FFFFFF; --lc-submit-edge:none;
+  --lc-panel-shadow:none; --lc-inset-shadow:none;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .flexlayout__tabset,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .flexlayout__tab { border:1px solid var(--fl-line) !important; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .flexlayout__tab_button--selected {
+  background-color:var(--fl-raised) !important; border-bottom:3px solid var(--fl-red) !important;
+  color:#FFFFFF !important;
+}

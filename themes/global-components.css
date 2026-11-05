@@ -1,0 +1,116 @@
+/* Shared chrome only. Selectors use semantic roles or complete utility tokens. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(header, nav, [role="navigation"]) {
+  background-color: var(--lc-nav-bg) !important;
+  border-color: var(--lc-nav-rule) !important;
+  color: var(--lc-text) !important;
+  font-family: var(--lc-font-ui) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(header, nav, [role="navigation"]) a:hover {
+  color: var(--lc-accent) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(aside, [role="menu"], [role="listbox"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body > :is([data-radix-popper-content-wrapper], [data-headlessui-portal]) :is([role="menu"], [role="listbox"]) {
+  background-color: var(--lc-bg1) !important;
+  color: var(--lc-text) !important;
+  border-color: var(--lc-border) !important;
+  border-radius: var(--lc-card-radius) !important;
+  box-shadow: var(--lc-card-shadow) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is([role="menuitem"], [role="option"], [role="tab"]):hover,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body > :is([data-radix-popper-content-wrapper], [data-headlessui-portal]) :is([role="menuitem"], [role="option"]):hover {
+  background-color: var(--lc-hover-fill) !important;
+  color: var(--lc-text) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is([aria-current="page"], [aria-selected="true"], [data-state="active"]) {
+  color: var(--lc-accent);
+  border-color: var(--lc-accent);
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(button, [role="button"], input, textarea, select, [role="combobox"]) {
+  font-family: var(--lc-font-ui) !important;
+  border-radius: var(--lc-control-radius) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]), textarea, select, [role="combobox"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] [role="dialog"] :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select) {
+  background-color: var(--lc-inset);
+  color: var(--lc-text) !important;
+  caret-color: var(--lc-accent);
+  border-color: var(--lc-border) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(input, textarea)::placeholder {
+  color: var(--lc-text3) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(button, [role="button"]):not(:disabled):hover {
+  border-color: var(--lc-border-strong);
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(button, a, input, textarea, select, [role="button"], [role="menuitem"], [role="option"]):focus-visible,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] [role="dialog"] :is(button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--lc-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is([class~="bg-layer-1"], [class~="dark:bg-dark-layer-1"], [class~="bg-sd-card"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] [role="dialog"] {
+  background-color: var(--lc-bg2) !important;
+  color: var(--lc-text) !important;
+  border-color: var(--lc-border) !important;
+  border-radius: var(--lc-card-radius) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) [class~="bg-sd-card"],
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] [role="dialog"] {
+  box-shadow: var(--lc-card-shadow) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is([class~="bg-layer-2"], [class~="dark:bg-dark-layer-2"], [class~="bg-sd-popover"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is([role="tooltip"], [data-radix-popper-content-wrapper] [role="menu"]) {
+  background-color: var(--lc-raised) !important;
+  color: var(--lc-text) !important;
+  border-color: var(--lc-border) !important;
+  border-radius: var(--lc-card-radius) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is([class~="border-divider-3"], [class~="dark:border-dark-divider-3"], [class~="border-divider-4"]) {
+  border-color: var(--lc-hairline) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(button, input, select, [role="menuitem"]) {
+    transition-duration: 0s !important;
+  }
+}
+
+/* Fastlap broadcast chrome on native navigation and controls. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next,#root,#app) :is(header,[role="banner"],nav[aria-label*="main" i],nav[aria-label*="primary" i]) {
+  background:var(--fl-carbon) !important; border-bottom:1px solid var(--fl-line) !important;
+  box-shadow:none !important;
+}
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(header,[role="banner"],nav[aria-label*="main" i],nav[aria-label*="primary" i]) a,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] #__next nav a {
+  font:700 13px var(--fl-display) !important; letter-spacing:.09em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(header,[role="banner"],nav[aria-label*="main" i],nav[aria-label*="primary" i]) :is([aria-current="page"],[data-state="active"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] #__next nav :is([aria-current="page"],[data-state="active"]) {
+  color:#fff !important; box-shadow:inset 0 -3px 0 var(--fl-red);
+}
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is([role="menu"],[role="listbox"],[role="dialog"]),
+html[data-lc-theme="fastlap"] body > :is([data-radix-popper-content-wrapper],[data-headlessui-portal]) :is([role="menu"],[role="listbox"]) {
+  border:1px solid var(--fl-line-2) !important; border-radius:0 !important;
+  background:var(--fl-pit) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next,#root,#app) :is(button,[role="button"],input,select,[role="combobox"]) { border-radius:0 !important; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next,#root,#app) :is(button,[role="button"]) {
+  font-family:var(--fl-display) !important; font-weight:700; letter-spacing:.06em;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(h1,h2) {
+  font-family:var(--fl-display) !important; font-style:italic; font-weight:900 !important;
+  text-transform:uppercase; letter-spacing:.005em;
+}

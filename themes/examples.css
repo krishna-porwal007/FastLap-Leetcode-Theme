@@ -1,0 +1,51 @@
+/* Native LeetCode examples, grouped without replacing their copy or math nodes. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] .lcfl-example-heading {
+  display:block; margin:28px 0 0 !important; padding:12px 16px 11px 19px;
+  color:#fff !important; background:#151518 !important;
+  border:1px solid #34343c; border-left:4px solid #e10a1e;
+  font:italic 900 21px/1.1 var(--fl-display) !important;
+  text-transform:uppercase; letter-spacing:.04em;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] .lcfl-example-heading :is(strong,b) {
+  color:inherit !important; font:inherit !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example {
+  display:block; width:100%; max-width:100%; margin:0 0 24px !important;
+  padding:14px 16px !important; overflow-x:auto !important; overflow-y:hidden;
+  background:#0e0e10 !important; color:#ededf2 !important;
+  border:1px solid #34343c !important; border-top:0 !important; border-left:4px solid #34343c !important;
+  border-radius:0 !important; box-shadow:none !important;
+  white-space:pre !important; overflow-wrap:normal !important; word-break:normal !important;
+  font:13px/1.6 var(--fl-code) !important; tab-size:4;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part {
+  display:block; min-width:max-content; padding:5px 0 13px;
+  color:#ededf2; white-space:pre; overflow-wrap:normal; word-break:normal;
+  font:13px/1.6 var(--fl-code);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part + .lcfl-example-part {
+  border-top:1px solid #26262c; padding-top:15px;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example .lcfl-example-label {
+  display:block; width:max-content; margin:0 0 7px; padding:0 0 4px;
+  color:#8c8c97 !important; border-bottom:2px solid #34343c;
+  font:700 11px/1.2 var(--fl-display) !important; letter-spacing:.18em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part[data-lcfl-part="input"] .lcfl-example-label {
+  border-color:#e10a1e;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part[data-lcfl-part="output"] .lcfl-example-label {
+  border-color:#22c55e;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part[data-lcfl-part="explanation"] {
+  min-width:0; width:100%; color:#b4b4be; white-space:pre-wrap;
+  font:14px/1.65 var(--fl-text); overflow-wrap:normal; word-break:normal;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example > .lcfl-example-part[data-lcfl-part="explanation"] code {
+  font-family:var(--fl-code) !important; white-space:pre;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example br { line-height:1.5; }
+@media (max-width:767px) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] .lcfl-example-heading { font-size:18px !important; }
+  html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre.lcfl-example { padding:12px !important; }
+}

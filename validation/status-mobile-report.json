@@ -1,0 +1,34 @@
+{
+  "nativeStatusOptions": "Todo\nAttempted\nSolved",
+  "nativeAttemptedFilter": {
+    "questionStatuses": [
+      "ATTEMPTED"
+    ],
+    "operator": "IS"
+  },
+  "hover": "rgba(225, 10, 30, 0.706) 2.11414px 0px 0px 0px inset",
+  "statusFixtures": {
+    "two-sum": {
+      "status": "solved",
+      "rail": "rgba(34, 197, 94, 0.914) 2.74344px 0px 0px 0px inset"
+    },
+    "add-two-numbers": {
+      "status": "attempted",
+      "rail": "rgba(250, 204, 21, 0.914) 2.74336px 0px 0px 0px inset"
+    }
+  },
+  "mobile": {
+    "overflow": false,
+    "title": {
+      "x": 99,
+      "y": 710.90625,
+      "width": 74.59375,
+      "height": 19.5,
+      "top": 710.90625,
+      "right": 173.59375,
+      "bottom": 730.40625,
+      "left": 99
+    },
+    "searchVisible": true
+  }
+}

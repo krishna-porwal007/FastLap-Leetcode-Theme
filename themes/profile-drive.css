@@ -1,0 +1,72 @@
+/* Scroll-driven 3D circuit. All native profile content remains after this section. */
+#lcfl-drive { --intro:1; position:relative; z-index:2000; margin:0; color:#fff; background:#0e0e10; font:15px/1.5 var(--fl-text); }
+#lcfl-drive, #lcfl-drive * { box-sizing:border-box; }
+#lcfl-drive[data-mode="drive"] .lcfl-runway { height:var(--runway); }
+#lcfl-drive .lcfl-stage { position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; isolation:isolate; background:#0e0e10; }
+#lcfl-drive canvas { position:absolute; inset:0; display:block; width:100%; height:100%; }
+#lcfl-drive .lcfl-stage::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; background:radial-gradient(100% 95% at 50% 40%,transparent 45%,#040406aa 100%); }
+#lcfl-drive .lcfl-topline { position:absolute; z-index:3; left:40px; top:28px; display:flex; gap:16px; align-items:center; font:700 11px var(--fl-display); letter-spacing:.2em; color:#b4b4be; }
+#lcfl-drive .lcfl-plate { padding:5px 18px 5px 10px; color:#fff; background:#e10a1e; font:italic 900 18px var(--fl-display); clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%); }
+#lcfl-drive .lcfl-skip { position:absolute; z-index:5; right:40px; top:28px; padding:10px 16px; background:#0e0e10d9; border:1px solid #55555f; border-radius:0; color:#fff; font:700 12px var(--fl-display); letter-spacing:.12em; cursor:pointer; }
+#lcfl-drive .lcfl-skip:hover { background:#e10a1e; border-color:#e10a1e; }
+#lcfl-drive :is(button,a,summary):focus-visible { outline:2px solid #fff; outline-offset:4px; }
+#lcfl-drive .lcfl-hero { position:absolute; z-index:3; left:0; right:0; bottom:0; padding:90px 4vw 48px; pointer-events:none; opacity:var(--intro); background:linear-gradient(transparent,#0e0e10df); }
+#lcfl-drive .lcfl-eyebrow { display:flex; align-items:center; gap:14px; margin:0 0 12px; font:700 12px var(--fl-display); letter-spacing:.24em; color:#b4b4be; }
+#lcfl-drive .lcfl-eyebrow i { width:46px; height:10px; background:repeating-linear-gradient(115deg,#e10a1e 0 6px,transparent 6px 11px); }
+#lcfl-drive h1 { margin:0 0 24px; color:#fff; font:italic 900 clamp(64px,11vw,175px)/.88 var(--fl-display); text-transform:uppercase; letter-spacing:-.025em; overflow-wrap:anywhere; }
+#lcfl-drive .lcfl-summary { display:flex; flex-wrap:wrap; gap:22px; }
+#lcfl-drive .lcfl-summary span { padding-right:26px; border-right:1px solid #34343c; }
+#lcfl-drive .lcfl-summary b { display:block; font:900 clamp(28px,3vw,44px)/1 var(--fl-display); font-variant-numeric:tabular-nums; }
+#lcfl-drive .lcfl-summary small { display:block; margin-top:6px; color:#8c8c97; font:700 10px var(--fl-display); letter-spacing:.16em; }
+#lcfl-drive .lcfl-message { margin:22px 0 0; color:#b4b4be; font:700 12px var(--fl-display); letter-spacing:.12em; }
+#lcfl-drive .lcfl-hud { position:absolute; z-index:3; bottom:40px; left:40px; width:min(360px,31vw); opacity:calc(1 - var(--intro)); pointer-events:none; }
+#lcfl-drive .lcfl-round { display:flex; align-items:stretch; font:700 12px var(--fl-display); }
+#lcfl-drive .lcfl-round b { background:#e10a1e; padding:8px 12px; font-style:italic; white-space:nowrap; }
+#lcfl-drive time { background:#fff; color:#0e0e10; padding:8px 12px; }
+#lcfl-drive .lcfl-board { padding:18px; border-left:4px solid #e10a1e; background:#0e0e10ed; }
+#lcfl-drive .lcfl-figures { display:flex; align-items:baseline; gap:18px; font-family:var(--fl-display); font-variant-numeric:tabular-nums; }
+#lcfl-drive .lcfl-figures strong { font-size:64px; font-weight:900; line-height:1; }
+#lcfl-drive .lcfl-figures b { font-size:24px; }
+#lcfl-drive [data-direction="up"] { color:#22c55e; }
+#lcfl-drive [data-direction="down"] { color:#ff8a8a; }
+#lcfl-drive h2 { margin:12px 0 8px; color:#fff; font:italic 900 22px/1.1 var(--fl-display); text-transform:uppercase; }
+#lcfl-drive .lcfl-board p { margin:0; color:#b4b4be; font:700 10px var(--fl-display); letter-spacing:.1em; }
+#lcfl-drive .lcfl-chart { display:block; width:100%; height:48px; margin-top:14px; overflow:visible; }
+#lcfl-drive polyline { fill:none; stroke:#b4b4be; stroke-width:1.5; }
+#lcfl-drive circle { fill:#e10a1e; stroke:#fff; stroke-width:1; }
+#lcfl-drive .lcfl-landmarks { position:absolute; z-index:2; inset:0; pointer-events:none; }
+#lcfl-drive .lcfl-landmarks span { position:absolute; max-width:260px; padding:6px 10px; transform:translate(-50%,-100%); color:#fff; background:#0e0e10e8; border-top:3px solid #a855f7; font:700 12px/1.3 var(--fl-display); text-transform:uppercase; text-align:center; }
+#lcfl-drive .lcfl-landmarks .peak { border-color:#e10a1e; font-size:16px; }
+#lcfl-drive [hidden] { display:none !important; }
+#lcfl-drive .lcfl-credit { position:absolute; z-index:5; right:24px; bottom:16px; color:#b4b4be; padding:6px; font:700 10px var(--fl-display); letter-spacing:.08em; text-decoration:none; display:none; }
+#lcfl-drive[data-car="model"] .lcfl-credit { display:block; }
+#lcfl-drive .lcfl-progress { position:absolute; z-index:4; left:0; right:0; bottom:0; height:3px; background:#34343c; }
+#lcfl-drive .lcfl-progress i { display:block; height:100%; background:#e10a1e; transform-origin:left; transform:scaleX(0); }
+#lcfl-drive .lcfl-finish { display:none; position:absolute; z-index:4; left:40px; bottom:50px; gap:12px; flex-direction:column; pointer-events:none; }
+#lcfl-drive .lcfl-finish i { width:72px; height:36px; background:conic-gradient(#fff 25%,#0e0e10 0 50%,#fff 0 75%,#0e0e10 0) 0 0/18px 18px; transform:skewX(-12deg); }
+#lcfl-drive .lcfl-finish strong { font:italic 900 clamp(70px,10vw,140px)/.85 var(--fl-display); }
+#lcfl-drive .lcfl-finish span { font:700 12px var(--fl-display); letter-spacing:.18em; }
+#lcfl-drive.lcfl-finished .lcfl-finish { display:flex; }
+#lcfl-drive.lcfl-finished .lcfl-hud { visibility:hidden; }
+#lcfl-drive .lcfl-history { position:relative; z-index:6; background:#151518; border-block:1px solid #34343c; }
+
+#lcfl-drive .lcfl-history summary { padding:18px 4vw; min-height:58px; color:#fff; cursor:pointer; font:700 12px var(--fl-display); letter-spacing:.16em; }
+#lcfl-drive .lcfl-history summary span { margin-left:20px; color:#8c8c97; font-weight:600; letter-spacing:.04em; }
+#lcfl-drive .lcfl-log { max-height:50vh; overflow:auto; padding:0 4vw 20px; }
+#lcfl-drive table { border-collapse:collapse; width:100%; font-size:13px; }
+#lcfl-drive :is(th,td) { padding:10px 16px; border-bottom:1px solid #34343c; text-align:left; white-space:nowrap; }
+#lcfl-drive th { color:#b4b4be; font:700 12px var(--fl-display); text-transform:uppercase; }
+#lcfl-drive caption { text-align:left; padding:12px 16px; color:#b4b4be; }
+#lcfl-drive[data-mode="compact"] .lcfl-stage { position:relative; height:auto; min-height:340px; }
+#lcfl-drive[data-mode="compact"] .lcfl-hero { position:relative; padding:110px 4vw 34px; opacity:1; }
+#lcfl-drive[data-mode="compact"] :is(canvas,.lcfl-hud,.lcfl-landmarks,.lcfl-progress,.lcfl-credit) { display:none; }
+#lcfl-drive[data-mode="compact"] h1 { font-size:clamp(42px,8vw,100px); }
+@media (max-width:760px) {
+  #lcfl-drive .lcfl-topline { left:20px; top:18px; font-size:9px; gap:8px; letter-spacing:.08em; }
+  #lcfl-drive .lcfl-topline > span:last-child { display:none; }
+  #lcfl-drive .lcfl-skip { right:20px; top:18px; font-size:10px; }
+  #lcfl-drive .lcfl-summary { gap:15px; }
+  #lcfl-drive .lcfl-summary span { padding-right:15px; }
+  #lcfl-drive .lcfl-summary small { font-size:9px; letter-spacing:.06em; }
+}
+@media (prefers-reduced-motion:reduce) { #lcfl-drive * { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }

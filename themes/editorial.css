@@ -1,0 +1,63 @@
+/* Editorial prose only. The surrounding problem editor retains core.css. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) {
+  color: var(--lc-text) !important;
+  font-family: var(--lc-font-prose) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) :is(p, li) {
+  color: var(--lc-text2) !important;
+  line-height: var(--lc-prose-leading) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) :is(h1, h2, h3, h4) {
+  color: var(--lc-text) !important;
+  border-color: var(--lc-hairline) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) a {
+  color: var(--lc-accent-2) !important;
+  text-decoration-color: var(--lc-hairline);
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) blockquote {
+  background-color: var(--lc-fill-4) !important;
+  color: var(--lc-text2) !important;
+  border-left: 2px solid var(--lc-accent) !important;
+  border-radius: 0 !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) :is(pre, :not(pre) > code) {
+  background-color: var(--lc-inset) !important;
+  color: var(--lc-text) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) pre {
+  border-left: 2px solid var(--lc-accent) !important;
+  overflow-x: auto;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"], [data-e2e-locator="editorial-content"], [data-testid="editorial-content"], .editorial-content, .markdown-body, main article) :is(th, td) {
+  border-color: var(--lc-hairline) !important;
+}
+
+/* Broadcast headings, calm long-form reading. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"],[data-e2e-locator="editorial-content"],[data-testid="editorial-content"],.editorial-content,.markdown-body,main article) :is(h1,h2,h3) {
+  font-family:var(--fl-display) !important; font-style:italic; font-weight:900 !important;
+  text-transform:uppercase; line-height:1.1 !important;
+  border-left:4px solid var(--fl-red) !important; padding-left:12px;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="editorial"]
+  :is([data-track-load="editorial_content"],[data-e2e-locator="editorial-content"],[data-testid="editorial-content"],.editorial-content,.markdown-body,main article) :is(pre,pre code) {
+  font-family:var(--fl-code) !important;
+}

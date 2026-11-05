@@ -1,0 +1,5 @@
+tools/node_modules/
+tools/browsers/
+tools/browser-profile/
+tools/extension-profile/
+tools/final-test-profile/

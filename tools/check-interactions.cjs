@@ -1,0 +1,35 @@
+const {chromium}=require('playwright');const path=require('path');const fs=require('fs');const assert=require('assert/strict');
+(async()=>{const ext=path.resolve('.');const c=await chromium.launchPersistentContext('./tools/extension-profile',{headless:false,executablePath:'./tools/browsers/chromium-1248/chrome-linux64/chrome',args:['--no-sandbox','--enable-unsafe-swiftshader',`--disable-extensions-except=${ext}`,`--load-extension=${ext}`],viewport:{width:1440,height:1000}});
+const report={checks:[],errors:[]};const check=(name,data)=>{report.checks.push({name,...data});console.log(name,JSON.stringify(data))};
+try {
+ const p=await c.newPage();p.on('pageerror',e=>report.errors.push(e.message));let requests=[];
+ p.on('request',r=>{if(r.url().includes('/graphql'))try{const body=JSON.parse(r.postData()||'{}');if(body.operationName==='problemsetQuestionListV2')requests.push(body.variables);}catch{}});
+ await p.goto('https://leetcode.com/problemset/',{waitUntil:'domcontentloaded'});await p.waitForSelector('.lcfl-row-tags',{timeout:20000});
+ check('native tags',{count:await p.locator('.lcfl-row-tags').count(),twoSum:await p.locator('[data-e2e-slug="two-sum"] .lcfl-row-tags').innerText()});
+ await p.screenshot({path:'validation/problemset-final.png'});
+ const searchResponse = p.waitForResponse(r => r.url().includes('/graphql') && r.request().postData()?.includes('problemsetQuestionListV2') && JSON.parse(r.request().postData()).variables.searchKeyword === 'two sum');
+ await p.locator('input[placeholder="Search questions"]').fill('two sum');
+ const searchPayload=await (await searchResponse).json();fs.writeFileSync('validation/search-response.json',JSON.stringify(searchPayload,null,2));
+ if(searchPayload.data?.problemsetQuestionListV2){const searched=searchPayload.data.problemsetQuestionListV2.questions;await p.waitForFunction(slug=>!!document.querySelector('[data-e2e-slug="'+slug+'"]'),searched[0].titleSlug);check('search',{request:requests.at(-1).searchKeyword,titles:await p.locator('[data-lcfl-title]').allTextContents()});}
+ else check('search native sign-in gate',{request:requests.at(-1).searchKeyword,errors:searchPayload.errors});
+ await p.locator('input[placeholder="Search questions"]').fill('');await p.waitForTimeout(1800);
+ const sortResponse = p.waitForResponse(r => r.url().includes('/graphql') && r.request().postData()?.includes('problemsetQuestionListV2') && JSON.parse(r.request().postData()).variables.sortBy.sortField === 'AC_RATE');
+ await p.locator('[data-e2e-locator="filter-sort-button"] button').click();await p.locator('[role="menu"]').getByText('Acceptance',{exact:true}).click(); const sorted=(await (await sortResponse).json()).data.problemsetQuestionListV2.questions; await p.waitForFunction(slug=>!!document.querySelector('[data-e2e-slug="'+slug+'"]'), sorted[0].titleSlug); await p.waitForTimeout(200);
+ check('sort',{sort:requests.at(-1).sortBy,first:await p.locator('[data-e2e-slug="'+sorted[0].titleSlug+'"] [data-lcfl-title]').innerText()});assert.equal(requests.at(-1).sortBy.sortField,'AC_RATE');
+ await p.locator('[data-e2e-locator="filter-button"] button').click();await p.locator('[data-e2e-key="difficulty"] [data-e2e-locator="filter-multi-select"]').click();
+ console.log('DIFFICULTY OPTIONS',await p.locator('[role="menu"]').last().innerText());await p.locator('[role="menu"]').last().getByText('Easy',{exact:true}).click();await p.keyboard.press('Escape');await p.keyboard.press('Escape');await p.waitForTimeout(1800);
+ check('filter',{filter:requests.at(-1).filters.difficultyFilter,difficulties:await p.locator('[data-e2e-locator="question-list-row"]').evaluateAll(rs=>[...new Set(rs.filter(r=>!r.href.includes('daily-question')).map(r=>r.dataset.e2eDifficulty))])});
+ const before=await p.locator('[data-e2e-locator="question-list-row"]').count();await p.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await p.waitForTimeout(2500);
+ check('incremental pagination',{before,after:await p.locator('[data-e2e-locator="question-list-row"]').count(),skip:requests.at(-1).skip});
+ await p.evaluate(()=>scrollTo(0,0)); await p.locator('.lcfl-directory-title h2').click(); await p.keyboard.press('Escape'); await p.setViewportSize({width:390,height:844});await p.waitForTimeout(500);
+ check('mobile',{searchVisible:await p.locator('input[placeholder="Search questions"]').isVisible(),overflow:await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});await p.screenshot({path:'validation/problemset-mobile.png'});
+ await p.setViewportSize({width:1440,height:1000});await p.goto('https://leetcode.com/u/lee215/',{waitUntil:'domcontentloaded'});await p.waitForSelector('#lcfl-drive[data-car="model"]',{timeout:20000});await p.waitForTimeout(300);
+ await p.screenshot({path:'validation/profile-start-final.png'});
+ const poses=[];for(const progress of [.25,.6,.25,.99]){await p.evaluate(progress=>{const r=document.querySelector('#lcfl-drive'),s=r.querySelector('.lcfl-stage'),w=r.querySelector('.lcfl-runway');scrollTo(0,r.getBoundingClientRect().top+scrollY+progress*(w.offsetHeight-s.offsetHeight));},progress);await p.waitForTimeout(300);poses.push(await p.locator('#lcfl-drive').evaluate(r=>({distance:r.dataset.distance,progress:r.dataset.progress,round:r.querySelector('.lcfl-round').textContent})));if(progress===.25)await p.screenshot({path:'validation/profile-drive-final.png'});}
+ assert.deepEqual(poses[0],poses[2]);assert.ok(Number(poses[1].distance)>Number(poses[0].distance));check('forward and reverse',{poses});await p.screenshot({path:'validation/profile-finish.png'});
+ await p.locator('.lcfl-skip').click();check('skip',{nativeVisible:await p.locator('#__next').evaluate(r=>r.getBoundingClientRect().top<innerHeight),scrollLocked:await p.evaluate(()=>document.body.style.overflow==='hidden')});await p.screenshot({path:'validation/profile-native.png'});
+ await p.emulateMedia({reducedMotion:'reduce'});await p.waitForTimeout(300);check('reduced motion',{mode:await p.locator('#lcfl-drive').getAttribute('data-mode')});await p.evaluate(()=>scrollTo(0,0));await p.screenshot({path:'validation/profile-reduced.png'});
+ await p.emulateMedia({reducedMotion:'no-preference'});await p.setViewportSize({width:390,height:844});await p.waitForTimeout(500);check('mobile profile',{mode:await p.locator('#lcfl-drive').getAttribute('data-mode')});await p.screenshot({path:'validation/profile-mobile.png'});
+ await p.setViewportSize({width:1440,height:1000});await p.waitForTimeout(800);await p.locator('.lcfl-skip').click(); await p.evaluate(()=>window.__navigationTest='same-document');await p.getByRole('link',{name:'Library',exact:true}).first().click();await p.waitForURL('**/problemset/**');await p.waitForTimeout(1200);check('native navigation cleanup',{driveCount:await p.locator('#lcfl-drive').count(),sameDocument:await p.evaluate(()=>window.__navigationTest==='same-document')});
+} catch(error){report.failure=error.stack;console.log('FAIL',error.stack)} finally {fs.writeFileSync('validation/interaction-report.json',JSON.stringify(report,null,2));await c.close();}
+})();

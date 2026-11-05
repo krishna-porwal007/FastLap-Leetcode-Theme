@@ -1,0 +1,42 @@
+{
+  "peak": {
+    "expectedContest": "Weekly Contest 176",
+    "expectedRating": 2222,
+    "board": "2,222\n+59\nWEEKLY CONTEST 176\n\nPLACEMENT P59 · CAREER PEAK"
+  },
+  "idle": {
+    "distanceUnchanged": true
+  },
+  "problem": {
+    "editor": 2,
+    "run": 1,
+    "submit": 1,
+    "splitters": 2,
+    "drive": 0,
+    "directory": 0,
+    "theme": "problem",
+    "resize": {
+      "before": {
+        "x": 716,
+        "y": 48,
+        "width": 8,
+        "height": 942
+      },
+      "after": {
+        "x": 771,
+        "y": 48,
+        "width": 8,
+        "height": 942
+      }
+    }
+  },
+  "emptyFixture": {
+    "mode": "compact",
+    "message": "No attended contest history yet. Your profile is below."
+  },
+  "failureFixture": {
+    "mode": "compact",
+    "message": "Contest history unavailable. Your profile is below."
+  },
+  "errors": []
+}

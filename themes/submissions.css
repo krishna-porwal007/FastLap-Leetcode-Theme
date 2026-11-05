@@ -1,0 +1,95 @@
+/* Submission history and verdicts, including the problem-page Submissions tab. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) {
+  background-color: var(--lc-bg2) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+  color: var(--lc-text) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) :is(thead, [role="columnheader"]) {
+  background-color: var(--lc-bg1) !important;
+  color: var(--lc-text2) !important;
+  border-color: var(--lc-hairline) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) :is(tbody tr, [role="row"]):hover {
+  background-color: var(--lc-fill-3) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) :is(th, td, [role="cell"], [role="gridcell"]) {
+  border-color: var(--lc-hairline) !important;
+}
+
+/* The result locator is present on LeetCode's submission detail panel. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) [data-e2e-locator="submission-result"] {
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+  background-color: var(--lc-inset) !important;
+  color: var(--lc-text) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is([data-status="Accepted"], [data-status="AC"], [data-status="ac"], [data-result="Accepted"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is([data-e2e-locator="submission-result"][class~="text-green-s"], [data-e2e-locator="submission-result"] [class~="text-green-s"]) {
+  color: var(--lc-green) !important;
+  border-color: color-mix(in srgb, var(--lc-green) 45%, transparent) !important;
+  background-color: color-mix(in srgb, var(--lc-green) 9%, transparent) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is([data-status="Wrong Answer"], [data-status="Runtime Error"], [data-status="Compile Error"], [data-status="Time Limit Exceeded"], [data-status="Memory Limit Exceeded"], [data-result="Wrong Answer"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is([data-e2e-locator="submission-result"][class~="text-red-s"], [data-e2e-locator="submission-result"] [class~="text-red-s"]) {
+  color: var(--lc-red) !important;
+  border-color: color-mix(in srgb, var(--lc-red) 45%, transparent) !important;
+  background-color: color-mix(in srgb, var(--lc-red) 9%, transparent) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) [class~="text-green-s"] {
+  color: var(--lc-green) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is(table, [role="table"], [role="grid"]) [class~="text-red-s"] {
+  color: var(--lc-red) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"]
+  :is(#__next, #root, #app) :is([data-e2e-locator="submission-code"], [data-e2e-locator="submission-detail"]) pre {
+  background-color: var(--lc-inset) !important;
+  color: var(--lc-text) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-left: 2px solid var(--lc-accent) !important;
+  border-radius: 0 !important;
+}
+
+/* Verdict plates communicate state by a rail and readable pale ink. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is(th,[role="columnheader"]) {
+  font:700 12px var(--fl-display) !important; letter-spacing:.14em; text-transform:uppercase;
+  border-bottom:2px solid #fff !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is(tbody tr,[role="row"]):hover {
+  box-shadow:inset 4px 0 0 var(--fl-red);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is([data-status="Accepted"],[data-status="AC"],[data-status="ac"],[data-result="Accepted"]) {
+  background:rgba(34,197,94,.14) !important; color:#B8F5CD !important;
+  box-shadow:inset 3px 0 0 var(--fl-green);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is([data-status="Wrong Answer"],[data-status="Runtime Error"],[data-result="Wrong Answer"]) {
+  background:#2A0D11 !important; color:#FFB3B9 !important;
+  box-shadow:inset 3px 0 0 var(--fl-red);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is([data-status="Time Limit Exceeded"],[data-status="Memory Limit Exceeded"]) {
+  background:rgba(250,204,21,.10) !important; color:#FDE68A !important;
+  box-shadow:inset 3px 0 0 var(--fl-yellow);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="submissions"] :is(#__next,#root,#app) :is([data-status="Compile Error"],[data-status="Compilation Error"]) {
+  background:var(--fl-raised) !important; color:var(--fl-ink-2) !important;
+  box-shadow:inset 3px 0 0 var(--fl-line-2);
+}

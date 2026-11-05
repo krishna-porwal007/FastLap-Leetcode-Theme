@@ -1,0 +1,68 @@
+/* Profile activity and statistics: recolor chart chrome, never chart geometry. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] {
+  --lc-activity-0: #1C1C21;
+  --lc-activity-1: #0F3D22;
+  --lc-activity-2: #15803D;
+  --lc-activity-3: #22C55E;
+  --lc-activity-4: #A855F7;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(rect, [role="gridcell"]):is([data-level="0"], [class~="color-empty"]) {
+  fill: var(--lc-activity-0) !important;
+  background-color: var(--lc-activity-0) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(rect, [role="gridcell"]):is([data-level="1"], [class~="color-scale-1"]) {
+  fill: var(--lc-activity-1) !important;
+  background-color: var(--lc-activity-1) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(rect, [role="gridcell"]):is([data-level="2"], [class~="color-scale-2"]) {
+  fill: var(--lc-activity-2) !important;
+  background-color: var(--lc-activity-2) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(rect, [role="gridcell"]):is([data-level="3"], [class~="color-scale-3"]) {
+  fill: var(--lc-activity-3) !important;
+  background-color: var(--lc-activity-3) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(rect, [role="gridcell"]):is([data-level="4"], [class~="color-scale-4"]) {
+  fill: var(--lc-activity-4) !important;
+  background-color: var(--lc-activity-4) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(.recharts-cartesian-grid line, .recharts-cartesian-axis line, .recharts-cartesian-axis-tick line) {
+  stroke: var(--lc-hairline) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(.recharts-cartesian-axis-tick text, .recharts-legend-item-text) {
+  fill: var(--lc-text3) !important;
+  color: var(--lc-text3) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) .recharts-default-tooltip {
+  background-color: var(--lc-raised) !important;
+  color: var(--lc-text) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(progress, [role="progressbar"]) {
+  accent-color: var(--lc-green);
+  border-radius: 0 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) progress::-webkit-progress-bar {
+  background-color: var(--lc-inset);
+  border: 1px solid var(--lc-border);
+  border-radius: 0;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) progress::-webkit-progress-value {
+  background-color: var(--lc-green);
+  border-radius: 0;
+}

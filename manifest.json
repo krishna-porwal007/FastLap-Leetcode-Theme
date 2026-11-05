@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "Fastlap for LeetCode",
+  "version": "1.1.0",
+  "description": "Fastlap's carbon, pit and race-broadcast design for LeetCode.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "css": [
+        "themes/fastlap.css",
+        "themes/core.css",
+        "themes/problem.css",
+        "themes/examples.css",
+        "themes/global-foundation.css",
+        "themes/global-components.css",
+        "themes/discovery.css",
+        "themes/home.css",
+        "themes/problem-list.css",
+        "themes/profile.css",
+        "themes/profile-drive.css",
+        "themes/submissions.css",
+        "themes/statistics.css",
+        "themes/editorial.css",
+        "themes/contest.css",
+        "themes/typography-fixes.css",
+        "themes/page-transition.css",
+        "themes/navigation.css"
+      ],
+      "js": [
+        "src/content.js",
+        "src/monaco-ink.js",
+        "src/page-transition.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "js": [
+        "src/inject.js",
+        "src/problemset-data.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "js": [
+        "src/contest-history.js",
+        "src/profile-drive.js",
+        "src/problemset.js",
+        "src/examples.js",
+        "src/navigation.js",
+        "src/profile-recent-ac.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "resources": [
+        "fonts/*.woff2",
+        "assets/*.jpg",
+        "src/*.mjs",
+        "src/vendor/*.mjs",
+        "assets/*.hdr",
+        "assets/models/*.glb"
+      ]
+    }
+  ]
+}

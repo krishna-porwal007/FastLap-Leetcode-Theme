@@ -1,0 +1,101 @@
+/* Shared LeetCode token bridge for Fastlap global routes. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] {
+  --lc-space-1: 4px;
+  --lc-space-2: 8px;
+  --lc-space-3: 12px;
+  --lc-space-4: 16px;
+  --lc-space-6: 24px;
+  --lc-control-height: 36px;
+  --lc-control-radius: var(--lc-radius-sm);
+  --lc-card-radius: var(--lc-radius);
+  --lc-focus-ring: color-mix(in srgb, var(--lc-accent) 75%, transparent);
+  --lc-hover-fill: var(--lc-fill-3);
+  --lc-card-shadow: var(--lc-panel-shadow);
+  color-scheme: dark;
+}
+
+/* LeetCode declares some design tokens again on body and on its app root. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"],
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) {
+  --layer-01: var(--lc-bg2) !important;
+  --layer-02: var(--lc-raised) !important;
+  --layer-03: var(--lc-raised) !important;
+  --layer-bg-gray: var(--lc-desk) !important;
+  --layer-bg-pure: var(--lc-bg2) !important;
+  --fill-primary: var(--lc-fill-1) !important;
+  --fill-secondary: var(--lc-fill-2) !important;
+  --fill-tertiary: var(--lc-fill-3) !important;
+  --fill-quaternary: var(--lc-fill-4) !important;
+  --fill-pure: var(--lc-bg2) !important;
+  --text-primary: var(--lc-text) !important;
+  --text-secondary: var(--lc-text2) !important;
+  --text-tertiary: var(--lc-text3) !important;
+  --text-quaternary: var(--lc-text3) !important;
+  --text-reverse: var(--lc-bg0) !important;
+  --border-primary: var(--lc-border-strong) !important;
+  --border-secondary: var(--lc-border) !important;
+  --border-tertiary: var(--lc-hairline) !important;
+  --border-quaternary: var(--lc-hairline) !important;
+  --gray-60: var(--lc-text3) !important;
+  --blue-60: var(--lc-accent-2) !important;
+  --green-60: var(--lc-green) !important;
+  --yellow-60: var(--lc-yellow) !important;
+  --red-60: var(--lc-red) !important;
+  --difficulty-easy: var(--lc-green) !important;
+  --difficulty-medium: var(--lc-yellow) !important;
+  --difficulty-hard: var(--lc-red) !important;
+  --sd-background: var(--lc-hsl-bg) !important;
+  --sd-background-gray: var(--lc-hsl-desk) !important;
+  --sd-card: var(--lc-hsl-raised) !important;
+  --sd-popover: var(--lc-hsl-raised) !important;
+  --sd-muted: var(--lc-hsl-raised) !important;
+  --sd-accent: var(--lc-hsl-raised) !important;
+  --sd-secondary: var(--lc-hsl-raised) !important;
+  --sd-foreground: var(--lc-hsl-text) !important;
+  --sd-card-foreground: var(--lc-hsl-text) !important;
+  --sd-popover-foreground: var(--lc-hsl-text) !important;
+  --sd-accent-foreground: var(--lc-hsl-text) !important;
+  --sd-secondary-foreground: var(--lc-hsl-text) !important;
+  --sd-muted-foreground: var(--lc-hsl-text3) !important;
+  --sd-primary: var(--lc-hsl-text) !important;
+  --sd-primary-foreground: var(--lc-hsl-bg) !important;
+  --sd-ring: var(--lc-hsl-accent) !important;
+  --sd-border: var(--lc-hsla-hairline) !important;
+  --sd-input: var(--lc-hsla-hairline) !important;
+  --brand-orange: var(--lc-yellow) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"],
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) {
+  background-color: var(--lc-desk) !important;
+  color: var(--lc-text) !important;
+  font-family: var(--lc-font-ui) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body {
+  background-image: var(--lc-tex-body) !important;
+  background-size: var(--lc-tex-body-size) !important;
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 767px) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] body {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Keep the app containers transparent over the flat carbon page. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) {
+  background-color: transparent !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(h1, h2, h3, h4, p, li) {
+  font-family: var(--lc-font-ui);
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"] :is(#__next, #root, #app) :is(hr, [role="separator"]) {
+  border-color: var(--lc-hairline) !important;
+  background-color: var(--lc-hairline);
+}

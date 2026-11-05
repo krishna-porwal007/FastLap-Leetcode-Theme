@@ -1,0 +1,42 @@
+/* Prevent in-word wrapping on compact chrome; allow prose and long titles to wrap. */
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(header,[role="banner"],nav[aria-label*="main" i],nav[aria-label*="primary" i]) :is(a,button,[role="button"]),
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] #__next nav :is(a,button,[role="button"]) {
+  white-space:nowrap !important; word-break:normal !important;
+  overflow-wrap:normal !important; hyphens:none !important;
+  flex-shrink:0;
+}
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(a[href*="/premium"],button[aria-label*="premium" i],[data-testid*="premium" i]) {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:max-content; flex-shrink:0; white-space:nowrap !important;
+  word-break:normal !important; overflow-wrap:normal !important; hyphens:none !important;
+}
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(button,[role="button"],[role="tab"]),
+html[data-lc-theme="fastlap"] :is(#__next,#root,#app) :is(button,[role="button"],[role="tab"]) :is(span,b,strong) {
+  word-break:normal; overflow-wrap:normal; hyphens:none;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] :is(.flexlayout__tab_button,.flexlayout__tab_button_content,[data-e2e-locator="console-run-button"],[data-e2e-locator="console-submit-button"]) {
+  white-space:nowrap !important; word-break:normal !important;
+  overflow-wrap:normal !important; hyphens:none !important;
+  flex-shrink:0;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="listing"] :is(#__next,#root,#app) :is([class~="text-difficulty-easy"],[class~="text-difficulty-medium"],[class~="text-difficulty-hard"],[data-difficulty]) {
+  min-width:max-content; flex-shrink:0; white-space:nowrap !important;
+  word-break:normal !important; overflow-wrap:normal !important; hyphens:none !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest]:not([data-lc-fastlap-contest="other"]) :is(#__next,#root,#app) :is(main,[role="main"]) :is(h1,h2,h3,a[href^="/contest/"]) {
+  min-width:0; word-break:normal !important; overflow-wrap:normal !important; hyphens:none !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest]:not([data-lc-fastlap-contest="other"]) :is(#__next,#root,#app) :is([role="timer"],[data-state="live"],[data-status="live"],[aria-label="Live"]) {
+  white-space:nowrap !important; flex-shrink:0; font-variant-numeric:tabular-nums;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) :is(time,[data-testid="profile-stats"],[data-e2e-locator="profile-stats"]) :is(small,span) {
+  white-space:nowrap; word-break:normal; overflow-wrap:normal; hyphens:none;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) :is(h1,[data-testid="profile-name"],[data-e2e-locator="profile-name"]) {
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+@media (max-width:767px) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-contest]:not([data-lc-fastlap-contest="other"]) :is(#__next,#root,#app) :is(main,[role="main"]) :is(h1,h2,h3) {
+    font-size:clamp(25px,7vw,42px) !important;
+  }
+}

@@ -1,0 +1,99 @@
+/* Shared discovery primitives. No problem or contest page matches this scope. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"]) {
+  --lc-discovery-panel: var(--lc-bg2);
+  --lc-discovery-hover: var(--lc-fill-3);
+  --lc-discovery-selected: var(--lc-fill-2);
+  --lc-difficulty-easy-fill: rgba(34, 197, 94, .12);
+  --lc-difficulty-medium-fill: rgba(250, 204, 21, .10);
+  --lc-difficulty-hard-fill: rgba(225, 10, 30, .12);
+}
+
+/* Search boxes and filter triggers keep their native event handling. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(input[type="search"], input[role="searchbox"], input[placeholder*="search" i], input[placeholder*="搜索"], [role="searchbox"], button[aria-haspopup="listbox"], button[aria-haspopup="menu"]) {
+  background-color: var(--lc-inset) !important;
+  color: var(--lc-text) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--lc-inset-shadow) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(input[type="search"], input[role="searchbox"], input[placeholder*="search" i], input[placeholder*="搜索"], [role="searchbox"], button[aria-haspopup="listbox"], button[aria-haspopup="menu"]):hover {
+  border-color: var(--lc-border-strong) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(button[aria-expanded="true"], button[aria-pressed="true"], [role="option"][aria-selected="true"]) {
+  color: var(--lc-accent) !important;
+  border-color: var(--lc-accent) !important;
+  background-color: var(--lc-fill-3) !important;
+}
+
+/* Difficulty is a small outlined stamp with Fastlap's state inks. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(span, a):is([class~="text-difficulty-easy"], [class~="text-difficulty-medium"], [class~="text-difficulty-hard"], [data-difficulty]) {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--lc-space-2);
+  border: 1px solid currentColor;
+  border-radius: 0 !important;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(span, a):is([class~="text-difficulty-easy"], [data-difficulty="Easy"], [data-difficulty="easy"]) {
+  color: var(--lc-green) !important;
+  background-color: var(--lc-difficulty-easy-fill) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(span, a):is([class~="text-difficulty-medium"], [data-difficulty="Medium"], [data-difficulty="medium"]) {
+  color: var(--lc-yellow) !important;
+  background-color: var(--lc-difficulty-medium-fill) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(span, a):is([class~="text-difficulty-hard"], [data-difficulty="Hard"], [data-difficulty="hard"]) {
+  color: var(--lc-red) !important;
+  background-color: var(--lc-difficulty-hard-fill) !important;
+}
+
+/* Topics and tags are links or labels; the selector avoids generic pills. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(main, [role="main"]) :is(a[href^="/tag/"], a[href^="/topic/"], [data-testid="topic-tag"], [class~="tag"]) {
+  background-color: var(--lc-fill-3) !important;
+  color: var(--lc-text2) !important;
+  border: 1px solid var(--lc-hairline) !important;
+  border-radius: 0 !important;
+  padding: 2px var(--lc-space-2);
+  text-decoration: none;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(main, [role="main"]) :is(a[href^="/tag/"], a[href^="/topic/"]):hover {
+  background-color: var(--lc-fill-2) !important;
+  color: var(--lc-accent) !important;
+}
+
+/* Native and ARIA progress keep their existing value and interaction logic. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is(progress, [role="progressbar"]) {
+  accent-color: var(--lc-green);
+  border-radius: 0 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) progress::-webkit-progress-bar {
+  background-color: var(--lc-inset);
+  border: 1px solid var(--lc-border);
+  border-radius: 0;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) progress::-webkit-progress-value {
+  background-color: var(--lc-green);
+  border-radius: 0;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"]:is([data-lc-fastlap-discovery="home"], [data-lc-fastlap-discovery="listing"])
+  :is(#__next, #root, #app) :is([aria-label="Solved"], [data-status="ac"], [data-status="solved"], [class~="text-green-s"]) {
+  color: var(--lc-green) !important;
+}

@@ -1,0 +1,11 @@
+{
+  "manifestReferences": "pass",
+  "javascriptSyntax": "pass",
+  "originalAssetsByteIdentical": 6,
+  "engineOnlyExportChanged": true,
+  "modifiedExistingCodeAndStyles": [
+    "themes/problem-list.css",
+    "themes/profile-drive.css",
+    "src/profile-drive.js"
+  ]
+}

@@ -1,0 +1,54 @@
+/* Native problem page: race brief, pit controls and editor chrome. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .flexlayout__tab_button {
+  font:700 12px var(--fl-display) !important; letter-spacing:.11em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .flexlayout__tab_button--selected {
+  border-bottom:3px solid var(--fl-red) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] :is([data-e2e-locator="question-title"], [data-cy="question-title"], [data-track-load="description_content"] h1) {
+  color:var(--fl-ink) !important;
+  font:italic 900 clamp(30px,4vw,58px)/.98 var(--fl-display) !important;
+  text-transform:uppercase; letter-spacing:-.01em;
+  text-wrap:balance;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] :is(h2,h3) {
+  color:var(--fl-ink) !important; font:italic 900 clamp(20px,2.2vw,28px)/1.1 var(--fl-display) !important;
+  text-transform:uppercase; letter-spacing:.02em;
+  border-left:5px solid var(--fl-red); padding-left:12px;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] :is(pre,blockquote) {
+  background:var(--fl-carbon) !important; border:1px solid var(--fl-line) !important;
+  border-left:3px solid var(--fl-line-2) !important; border-radius:0 !important;
+  color:var(--fl-ink-2) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] pre,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-testcase-input"] {
+  font-family:var(--fl-code) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-track-load="description_content"] :is(strong,b) { color:var(--fl-ink); }
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .monaco-editor,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .monaco-editor-background,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .monaco-editor .margin,
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] .monaco-editor .overflow-guard { background-color:var(--fl-pit) !important; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-run-button"] {
+  background:var(--fl-raised) !important; border:1px solid var(--fl-line-2) !important;
+  border-radius:0 !important; color:var(--fl-ink-2) !important;
+  font:700 13px var(--fl-display) !important; letter-spacing:.09em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-submit-button"] {
+  background:linear-gradient(135deg,var(--fl-red) calc(100% - 8px),transparent 0) !important;
+  border:0 !important; border-radius:0 !important;
+  color:#fff !important; font:italic 900 14px var(--fl-display) !important;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-submit-button"]:hover:not(:disabled) { filter:brightness(1.12); }
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-submit-button"]:focus-visible {
+  outline:2px solid #fff !important; outline-offset:2px !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] [data-e2e-locator="console-testcase-input"] {
+  background:var(--fl-carbon) !important; border:1px solid var(--fl-line-2) !important;
+  border-radius:0 !important;
+}
+@media (max-width:767px) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-page="problem"] :is([data-e2e-locator="question-title"],[data-cy="question-title"],[data-track-load="description_content"] h1) { font-size:30px !important; }
+}

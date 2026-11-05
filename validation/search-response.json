@@ -1,0 +1,20 @@
+{
+  "errors": [
+    {
+      "message": "🐸☕Please Register or Sign in",
+      "locations": [
+        {
+          "line": 3,
+          "column": 3
+        }
+      ],
+      "path": [
+        "problemsetQuestionListV2"
+      ],
+      "extensions": {
+        "skip_sentry": true
+      }
+    }
+  ],
+  "data": null
+}

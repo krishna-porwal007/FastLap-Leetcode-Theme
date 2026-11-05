@@ -1,0 +1,249 @@
+{
+  "data": {
+    "userContestRankingHistory": [
+      {
+        "attended": true,
+        "rating": 1556.233,
+        "ranking": 145,
+        "contest": {
+          "title": "Weekly Contest 16A",
+          "startTime": 1485012600
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1524.771,
+        "ranking": 375,
+        "contest": {
+          "title": "Weekly Contest 18A",
+          "startTime": 1486222200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1542.213,
+        "ranking": 312,
+        "contest": {
+          "title": "Weekly Contest 18B",
+          "startTime": 1486261800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1534.057,
+        "ranking": 646,
+        "contest": {
+          "title": "Weekly Contest 19",
+          "startTime": 1486866600
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1516.761,
+        "ranking": 907,
+        "contest": {
+          "title": "Weekly Contest 23",
+          "startTime": 1489285800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1656.512,
+        "ranking": 17,
+        "contest": {
+          "title": "Weekly Contest 44",
+          "startTime": 1501983000
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1723.299,
+        "ranking": 86,
+        "contest": {
+          "title": "Weekly Contest 45",
+          "startTime": 1502587800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1711.711,
+        "ranking": 690,
+        "contest": {
+          "title": "Weekly Contest 46",
+          "startTime": 1503192600
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1735.978,
+        "ranking": 277,
+        "contest": {
+          "title": "Weekly Contest 47",
+          "startTime": 1503797400
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1793.128,
+        "ranking": 84,
+        "contest": {
+          "title": "Weekly Contest 48",
+          "startTime": 1504402200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1872.467,
+        "ranking": 29,
+        "contest": {
+          "title": "Weekly Contest 50",
+          "startTime": 1505611800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1920.185,
+        "ranking": 74,
+        "contest": {
+          "title": "Weekly Contest 54",
+          "startTime": 1508031000
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1963.039,
+        "ranking": 53,
+        "contest": {
+          "title": "Weekly Contest 63",
+          "startTime": 1513477800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1948.081,
+        "ranking": 352,
+        "contest": {
+          "title": "Weekly Contest 66",
+          "startTime": 1515292200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 1992.434,
+        "ranking": 54,
+        "contest": {
+          "title": "Weekly Contest 68",
+          "startTime": 1516501800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2022.118,
+        "ranking": 79,
+        "contest": {
+          "title": "Weekly Contest 69",
+          "startTime": 1517106600
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2076.188,
+        "ranking": 24,
+        "contest": {
+          "title": "Weekly Contest 71",
+          "startTime": 1518316200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2024.075,
+        "ranking": 689,
+        "contest": {
+          "title": "Weekly Contest 72",
+          "startTime": 1518921000
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2033.692,
+        "ranking": 125,
+        "contest": {
+          "title": "Weekly Contest 73",
+          "startTime": 1519525800
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2052.492,
+        "ranking": 99,
+        "contest": {
+          "title": "Weekly Contest 75",
+          "startTime": 1520735400
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2082.721,
+        "ranking": 56,
+        "contest": {
+          "title": "Weekly Contest 76",
+          "startTime": 1521336600
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2074.746,
+        "ranking": 208,
+        "contest": {
+          "title": "Weekly Contest 77",
+          "startTime": 1521941400
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2095.397,
+        "ranking": 76,
+        "contest": {
+          "title": "Weekly Contest 78",
+          "startTime": 1522546200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2081.302,
+        "ranking": 217,
+        "contest": {
+          "title": "Weekly Contest 79",
+          "startTime": 1523151000
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2163.084,
+        "ranking": 26,
+        "contest": {
+          "title": "Weekly Contest 156",
+          "startTime": 1569724200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2222.412,
+        "ranking": 59,
+        "contest": {
+          "title": "Weekly Contest 176",
+          "startTime": 1581820200
+        }
+      },
+      {
+        "attended": true,
+        "rating": 2204.316,
+        "ranking": 2663,
+        "contest": {
+          "title": "Weekly Contest 416",
+          "startTime": 1726972200
+        }
+      }
+    ]
+  }
+}

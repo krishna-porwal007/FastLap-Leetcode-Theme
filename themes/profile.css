@@ -1,0 +1,60 @@
+/* Profile cards and identity. Fastlap colors; LeetCode controls layout. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(article, [role="article"], [class~="bg-sd-card"]) {
+  background-color: var(--lc-bg2) !important;
+  background-image: var(--lc-tex-panel) !important;
+  background-size: var(--lc-tex-panel-size) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--lc-card-shadow) !important;
+  color: var(--lc-text) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(h1, h2, h3) {
+  color: var(--lc-text) !important;
+  font-family: var(--lc-font-ui) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is([role="tab"], [aria-current="page"])[aria-selected="true"] {
+  color: var(--lc-accent) !important;
+  border-color: var(--lc-accent) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-detail="profile"]
+  :is(#__next, #root, #app) :is(a[href^="/problems/"], a[href^="/tag/"]):hover {
+  color: var(--lc-accent) !important;
+}
+
+/* Driver card vocabulary uses available profile data, never invented ranks. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) :is(article,[role="article"],[class~="bg-sd-card"]) {
+  background:var(--fl-pit) !important; box-shadow:inset 0 3px 0 var(--fl-line-2) !important;
+  border:0 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) :is(h1,h2,h3) {
+  font-family:var(--fl-display) !important; font-style:italic; font-weight:900 !important;
+  text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) h1 {
+  font-size:clamp(32px,5vw,64px) !important; line-height:1 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] :is(#__next,#root,#app) :is([data-testid="profile-stats"],[data-e2e-locator="profile-stats"]) :is(strong,b) {
+  font:900 34px/1 var(--fl-display) !important; font-variant-numeric:tabular-nums;
+}
+
+/* Recent AC: only rows matched to public submission IDs and question metadata. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] [data-lcfl-ac-difficulty="easy"] { --lcfl-ac-color:#65A88A; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] [data-lcfl-ac-difficulty="medium"] { --lcfl-ac-color:#D6A84B; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] [data-lcfl-ac-difficulty="hard"] { --lcfl-ac-color:#E10A1E; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] a[data-lcfl-ac-difficulty] { position:relative; }
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] a[data-lcfl-ac-difficulty]::before {
+  content:""; position:absolute; left:0; top:8px; bottom:8px; width:2px;
+  background:var(--lcfl-ac-color); pointer-events:none;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] [data-lcfl-ac-title] {
+  color:color-mix(in srgb, var(--fl-ink) 86%, var(--lcfl-ac-color)) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-detail="profile"] [data-lcfl-ac-time] {
+  color:var(--fl-ink-3) !important;
+}

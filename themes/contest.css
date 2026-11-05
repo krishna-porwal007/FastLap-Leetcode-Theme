@@ -1,0 +1,63 @@
+/* Contest pages use native LeetCode data, routing and interaction. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest]:not([data-lc-fastlap-contest="other"]) :is(#__next,#root,#app) :is(main,[role="main"]) :is(h1,h2) {
+  color:var(--fl-ink) !important;
+  font:italic 900 clamp(30px,4vw,58px)/1 var(--fl-display) !important;
+  text-transform:uppercase; letter-spacing:.005em; text-wrap:balance;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest]:not([data-lc-fastlap-contest="other"]) :is(#__next,#root,#app) :is(main,[role="main"]) :is(article,[role="article"],[class~="bg-sd-card"]) {
+  background:var(--fl-pit) !important; border:1px solid var(--fl-line) !important;
+  border-radius:0 !important; box-shadow:inset 0 3px 0 var(--fl-line-2) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="listing"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(article,[role="article"],[class~="bg-sd-card"]):hover {
+  box-shadow:inset 4px 0 0 var(--fl-red) !important; background:var(--fl-raised) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="listing"] :is(#__next,#root,#app) :is(main,[role="main"]) a[href^="/contest/"] {
+  color:var(--fl-ink) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="listing"] :is(#__next,#root,#app) :is(main,[role="main"]) a[href^="/contest/"]:hover {
+  text-decoration:underline; text-decoration-color:var(--fl-red); text-underline-offset:3px;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="detail"] :is(#__next,#root,#app) :is(main,[role="main"]) :is([role="timer"],time,[data-testid="countdown"]) {
+  color:var(--fl-ink) !important; font:900 28px/1 var(--fl-display) !important;
+  font-variant-numeric:tabular-nums;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="detail"] :is(#__next,#root,#app) :is(main,[role="main"]) :is([data-state="live"],[data-status="live"],[aria-label="Live"]) {
+  box-shadow:inset 4px 0 0 var(--fl-red); background:#2A0D11 !important;
+  color:#FFB3B9 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="detail"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(button,[role="button"]) {
+  border-radius:0 !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) {
+  background:var(--fl-pit) !important; border:1px solid var(--fl-line) !important;
+  border-radius:0 !important; box-shadow:none !important;
+  font-variant-numeric:tabular-nums;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is(th,[role="columnheader"]) {
+  color:var(--fl-ink-3) !important; background:var(--fl-pit) !important;
+  border-bottom:2px solid #fff !important;
+  font:700 12px var(--fl-display) !important; letter-spacing:.16em; text-transform:uppercase;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is(td,[role="cell"],[role="gridcell"]) {
+  border-color:var(--fl-line) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is(tbody tr,[role="row"]):hover {
+  background:var(--fl-raised) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is([aria-current="true"],[data-current-user="true"]) {
+  box-shadow:inset 4px 0 0 var(--fl-red);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is([data-rank="1"],[data-place="1"]) :is(td:first-child,[role="cell"]:first-child) {
+  background:#fff !important; color:var(--fl-carbon) !important;
+  font:italic 900 20px var(--fl-display) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is(table,[role="table"],[role="grid"]) :is([data-rank="2"],[data-rank="3"],[data-place="2"],[data-place="3"]) :is(td:first-child,[role="cell"]:first-child) {
+  background:var(--fl-ink-2) !important; color:var(--fl-carbon) !important;
+  font:italic 900 20px var(--fl-display) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is([data-status="AC"],[data-status="Accepted"],[data-result="Accepted"]) {
+  background:rgba(34,197,94,.16) !important; box-shadow:inset 0 -4px 0 var(--fl-green);
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-contest="standings"] :is(#__next,#root,#app) :is([data-status="WA"],[data-status="Wrong Answer"]) {
+  background:#2A0D11 !important; box-shadow:inset 0 -4px 0 var(--fl-red);
+}

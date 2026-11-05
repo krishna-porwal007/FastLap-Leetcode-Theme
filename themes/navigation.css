@@ -1,0 +1,63 @@
+/* Desktop shell only. Native mobile chrome and problem workspace are untouched. */
+@media (min-width: 1100px) {
+  [data-lcfl-nav-shell] { padding-top: 56px !important; }
+  [data-lcfl-nav-shell][data-lcfl-nav-tabs] { padding-top: 92px !important; }
+  [data-lcfl-nav-replaced], [data-lcfl-nav-handle], [data-lcfl-nav-duplicate] { display: none !important; }
+  /* Remove the actual 240px flex item from flow, retaining its React subtree. */
+  [data-lcfl-nav-sidebar] {
+    display: none !important; position: fixed !important;
+    top: var(--lcfl-more-top, 56px) !important; left: var(--lcfl-more-left, 16px) !important; right: auto !important;
+    width: 280px !important; max-width: calc(100vw - 16px) !important; box-sizing: border-box !important;
+    height: auto !important; max-height: calc(100dvh - var(--lcfl-more-top, 56px) - 16px) !important;
+    flex: none !important; overflow: auto !important; z-index: 102 !important;
+    background: var(--fl-pit) !important; color: var(--fl-ink) !important;
+    border: 1px solid var(--fl-line-2) !important; border-top: 3px solid var(--fl-red) !important;
+    border-radius: 0 !important; box-shadow: 0 12px 28px #0008 !important;
+  }
+  [data-lcfl-more-open] [data-lcfl-nav-sidebar] { display: flex !important; }
+  [data-lcfl-nav-sidebar] [data-testid="shell-sidebar"] { height: auto !important; min-height: 300px; }
+  [data-lcfl-nav-utility] { top: 1px !important; z-index: 103 !important; height: 54px !important; }
+  #lcfl-navigation {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+    height: 56px; background: var(--fl-carbon); border-bottom: 1px solid var(--fl-line);
+    color: var(--fl-ink); font-family: var(--fl-display);
+    padding-right: var(--lcfl-utility-width, 320px); box-sizing: border-box;
+  }
+  #lcfl-navigation > nav:first-child { display: flex; align-items: stretch; height: 55px; gap: 4px; }
+  #lcfl-navigation a, #lcfl-navigation button {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 auto; padding: 0 14px; border: 0; border-radius: 0;
+    background: transparent; color: var(--fl-ink-2) !important;
+    font: 700 13px var(--fl-display) !important; letter-spacing: .08em;
+    text-decoration: none; white-space: nowrap; cursor: pointer;
+    transition: color 140ms ease, background-color 140ms ease;
+  }
+  #lcfl-navigation a:hover, #lcfl-navigation button:hover,
+  #lcfl-navigation [aria-current="page"], #lcfl-navigation [aria-expanded="true"] { color: var(--fl-ink) !important; background: var(--fl-pit); }
+  #lcfl-navigation a[aria-current="page"]::after {
+    content: ''; position: absolute; height: 3px; bottom: 0; left: 14px; right: 14px;
+    background: var(--fl-red); transform: skewX(-20deg);
+  }
+  #lcfl-navigation .lcfl-nav-brand {
+    background: var(--fl-red) !important; color: white !important;
+    padding: 0 27px 0 18px; margin-right: 8px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+    font: italic 900 22px var(--fl-display) !important; letter-spacing: -.03em;
+  }
+  #lcfl-navigation .lcfl-nav-brand span { margin-left: 10px; opacity: .65; font-size: 17px; }
+  #lcfl-navigation .lcfl-nav-tabs {
+    display: flex; position: absolute; top: 56px; left: 0; right: 0; height: 36px;
+    padding: 0 18px; gap: 12px; background: var(--fl-pit); border-bottom: 1px solid var(--fl-line);
+  }
+  #lcfl-navigation .lcfl-nav-tabs[hidden] { display: none; }
+  #lcfl-navigation .lcfl-nav-tabs a { font-size: 11px !important; }
+  #lcfl-navigation :is(a, button):focus-visible { outline: 2px solid white !important; outline-offset: -4px; }
+}
+@media (min-width: 1100px) and (max-width: 1279px) {
+  #lcfl-navigation a, #lcfl-navigation button { padding-left: 10px; padding-right: 10px; font-size: 12px !important; }
+  #lcfl-navigation .lcfl-nav-brand { font-size: 19px !important; }
+  #lcfl-navigation .lcfl-nav-brand span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #lcfl-navigation a, #lcfl-navigation button { transition: none; }
+}

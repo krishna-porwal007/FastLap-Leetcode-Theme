@@ -1,0 +1,44 @@
+/* Homepage cards and discovery entry points. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-discovery="home"]
+  :is(#__next, #root, #app) :is(main, [role="main"]) :is(article, [role="article"], [class~="bg-sd-card"]) {
+  background-color: var(--lc-bg2) !important;
+  background-image: var(--lc-tex-panel) !important;
+  background-size: var(--lc-tex-panel-size) !important;
+  border: 1px solid var(--lc-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--lc-card-shadow) !important;
+  color: var(--lc-text) !important;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-discovery="home"]
+  :is(#__next, #root, #app) :is(main, [role="main"]) :is(h1, h2, h3) {
+  color: var(--lc-text) !important;
+  letter-spacing: .015em;
+}
+
+html[data-lc-theme="fastlap"][data-lc-fastlap-page="global"][data-lc-fastlap-discovery="home"]
+  :is(#__next, #root, #app) :is(main, [role="main"]) :is(a[href^="/problemset"], a[href^="/explore/"]):hover {
+  color: var(--lc-accent) !important;
+  text-decoration-color: var(--lc-accent);
+}
+
+/* Featured native cards read as paddock entry plates. */
+html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="home"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(article,[role="article"],[class~="bg-sd-card"]) {
+  background:var(--fl-pit) !important; border:0 !important;
+  box-shadow:inset 0 3px 0 var(--fl-line-2) !important;
+  transition:background-color .15s,box-shadow .15s;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="home"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(article,[role="article"],[class~="bg-sd-card"]):hover {
+  background:var(--fl-raised) !important; box-shadow:inset 4px 0 0 var(--fl-red) !important;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="home"] :is(#__next,#root,#app) :is(main,[role="main"]) h1 {
+  font:italic 900 clamp(44px,7vw,104px)/.9 var(--fl-display) !important;
+  text-transform:uppercase; letter-spacing:-.01em; text-wrap:balance;
+}
+html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="home"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(h2,h3) {
+  font-family:var(--fl-display) !important; font-style:italic; font-weight:900 !important;
+  text-transform:uppercase;
+}
+@media (prefers-reduced-motion:reduce) {
+  html[data-lc-theme="fastlap"][data-lc-fastlap-discovery="home"] :is(#__next,#root,#app) :is(main,[role="main"]) :is(article,[role="article"],[class~="bg-sd-card"]) { transition:none !important; }
+}

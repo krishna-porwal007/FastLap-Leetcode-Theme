@@ -1,0 +1,7 @@
+{
+  "source": "Live public lee215 history",
+  "rounds": 27,
+  "length": 778.180583691365,
+  "checks": "1001 monotonic scroll positions, deterministic reverse, orthonormal forward frames, arc-distance checkpoints, 1/2 round histories",
+  "maxFrameError": 2.220446049250313e-16
+}
