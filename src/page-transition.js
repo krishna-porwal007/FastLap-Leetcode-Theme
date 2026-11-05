@@ -35,7 +35,7 @@
     if (document.hidden) return;
     const el = document.createElement('div');
     el.id = 'lcfl-stinger'; el.setAttribute('aria-hidden', 'true'); el.inert = true;
-    el.innerHTML = '<i class="r"></i><i class="w"></i><div class="c"></div><div class="s"></div><div class="cap"><span class="k"><b>FASTLAP</b><span>LEETCODE / NEXT UP</span></span><span class="l"></span><span class="t"><i></i></span></div>';
+    el.innerHTML = '<i class="r"></i><i class="w"></i><div class="c"></div><div class="s"></div><div class="cap"><span class="k"><b>LEETCODE</b><span>NEXT UP</span></span><span class="l"></span><span class="t"><i></i></span></div>';
     el.querySelector('.l').textContent = caption(destination);
     card = el; document.documentElement.appendChild(el);
     const started = performance.now();

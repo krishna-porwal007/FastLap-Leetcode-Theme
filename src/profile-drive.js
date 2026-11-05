@@ -23,7 +23,7 @@
     root.innerHTML = `
       <div class="lcfl-stage">
         <canvas aria-hidden="true"></canvas>
-        <div class="lcfl-topline"><span class="lcfl-plate">FASTLAP</span><span>DRIVER CARD / LEETCODE</span></div>
+        <div class="lcfl-topline"><span class="lcfl-plate">LEETCODE</span><span>DRIVER CARD</span></div>
         <button class="lcfl-skip" type="button">SKIP TO PROFILE ↓</button>
         <div class="lcfl-hero"><p class="lcfl-eyebrow">YOUR CONTEST JOURNEY <i></i></p><h1></h1>
           <div class="lcfl-summary"><span><b data-value="rounds">—</b><small>ATTENDED ROUNDS</small></span>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="lcfl-finish"><i></i><strong>FINISH</strong><span>YOUR NEXT LAP STARTS BELOW</span></div>
-        <a class="lcfl-credit" href="https://sketchfab.com/3d-models/2026-redbull-rb22-0a3d24a58e0549d591a5a48c22eec383" target="_blank" rel="noopener">CAR: DAVE LOVE · CC BY 4.0</a>
+        <a class="lcfl-credit" href="https://sketchfab.com/3d-models/2026-redbull-rb22-0a3d24a58e0549d591a5a48c22eec383" target="_blank" rel="noopener">SCROLL TO DRIVE ↓</a>
         <div class="lcfl-progress" aria-hidden="true"><i></i></div>
       </div>
       <details class="lcfl-history"><summary>CONTEST LOG <span>Every attended round</span></summary><div class="lcfl-log"></div></details>`;
@@ -148,7 +148,7 @@
         scene = module.createScene(canvas, rows, assetURL, requestFrame,
           ok => { if (!disposed) root.dataset.car = ok ? 'model' : 'original-procedural'; },
           () => compact('The circuit could not be displayed. Your contest log and profile are available below.'));
-        currentRound = -2; message.textContent = 'SCROLL TO DRIVE ↓ · SCROLL UP TO REVERSE';
+        currentRound = -2; message.textContent = '';
         root.querySelector('.lcfl-history').hidden = false;
         resize();
       } catch (error) {
