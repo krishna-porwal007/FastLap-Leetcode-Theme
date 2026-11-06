@@ -2,9 +2,55 @@
 
 A standalone Manifest V3 theme for `leetcode.com` and `leetcode.cn`. It translates Theme Studio for Codeforces' Fastlap palette and broadcast typography onto LeetCode's native interface. It uses LeetCode’s native controls and public contest history, with no Codeforces API calls or custom editor.
 
-## Install
+## Install the extension
 
-Open `chrome://extensions`, enable **Developer mode**, choose **Load unpacked**, and select the `fastlap-leetcode/` directory. Reload LeetCode after changing the extension files.
+Fastlap is a browser extension that automatically themes LeetCode when you visit it. You install it locally as an **unpacked extension**. You do not need Node.js, npm, a build step, or a development server to use it.
+
+### 1. Download the files
+
+1. Open the [GitHub repository](https://github.com/krishna-porwal007/FastLap-Leetcode-Theme).
+2. Click **Code → Download ZIP**.
+3. Extract the ZIP to a folder you plan to keep on your computer. Chrome loads the extension from this folder, so keep it in place while using the extension.
+
+Alternatively, if you use Git:
+
+```sh
+git clone https://github.com/krishna-porwal007/FastLap-Leetcode-Theme.git
+```
+
+### 2. Load it in Chrome
+
+1. Open Chrome and enter `chrome://extensions` in the address bar.
+2. Turn on **Developer mode** in the top-right corner.
+3. Click **Load unpacked**.
+4. Select the extracted or cloned folder that directly contains `manifest.json`, `src/`, `themes/`, and `assets/`. The folder name may vary; choose the folder containing `manifest.json`, not the ZIP file or its parent folder.
+5. Check that **Fastlap for LeetCode** appears in the extension list and is enabled.
+6. Open [LeetCode's problemset](https://leetcode.com/problemset/) or refresh any LeetCode tabs you already have open.
+
+These instructions target Chrome, where the extension has been tested. The extension also matches `leetcode.cn`, but that site has not been tested. See [Validation and limits](#validation-and-limits) below.
+
+## How to use it
+
+The theme applies automatically on `https://leetcode.com/*` and `https://leetcode.cn/*`. There is no extension popup, toolbar button, or separate app to launch.
+
+- **Browse and solve problems as usual.** Use LeetCode's existing search, filters, editor, **Run**, and **Submit** controls. Fastlap changes the presentation; LeetCode still handles your account and submissions.
+- **Explore a profile's contest history.** On supported profile pages with available contest history, scroll down to drive along the 3D circuit and scroll up to go back. Use **Contest log** for the history table or **Skip to profile** to jump to the regular profile. Smaller screens, reduced-motion preferences, or unavailable WebGL/history use a compact view instead.
+- **Turn it off.** Open `chrome://extensions` and switch off **Fastlap for LeetCode**, then refresh LeetCode. The theme is dark-only and has no in-page theme toggle.
+- **Uninstall it.** Click **Remove** on its card in `chrome://extensions`, then refresh LeetCode.
+
+## Updating and troubleshooting
+
+To update, download and extract the latest files into the installation folder, or run `git pull` inside your cloned repository. Then open `chrome://extensions`, click the **Reload** icon on Fastlap's card, and refresh your LeetCode tabs. Local unpacked installations need this manual update step.
+
+| Problem | What to do |
+| --- | --- |
+| Chrome cannot find or load the manifest | Extract the ZIP first, then select the folder that directly contains `manifest.json`. Do not select `src/` or `themes/`. |
+| LeetCode still looks unchanged | Make sure the extension is enabled, check that Chrome allows it access to the LeetCode site, and refresh the page. |
+| Changes do not appear after an update | Reload the extension in `chrome://extensions`, then refresh LeetCode too. Both steps are needed. |
+| Styles look mixed or broken | Try disabling other LeetCode themes or styling extensions, then refresh. LeetCode layout changes may also affect the theme. |
+| The 3D profile circuit does not appear | A compact view is expected on screens 760px wide or less, with reduced motion enabled, or when contest history or WebGL is unavailable. |
+
+If a problem persists, [open an issue](https://github.com/krishna-porwal007/FastLap-Leetcode-Theme/issues) with your browser version, the affected page URL, and a screenshot or the error shown on the extension's card.
 
 ## Design
 
